@@ -1,108 +1,60 @@
-index.html
-<!DOCTYPE html><html lang="en">
+  
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rashed Rana - Personal Website</title>
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      background:#f5f7fb;
-      color:#222;
-    }
-    header{
-      background:linear-gradient(135deg,#007bff,#00c6ff);
-      color:white;
-      text-align:center;
-      padding:50px 20px;
-    }
-    header h1{margin:0;font-size:40px;}
-    header p{margin-top:10px;font-size:18px;}nav{
-  background:#111;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-nav a{
-  color:white;
-  padding:12px 18px;
-  text-decoration:none;
-  display:block;
-}
-nav a:hover{background:#007bff;}
-
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:20px;
-}
-
-.card{
-  background:white;
-  margin:15px 0;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.profile{
-  text-align:center;
-}
-
-.btn{
-  display:inline-block;
-  padding:10px 15px;
-  background:#007bff;
-  color:white;
-  border-radius:6px;
-  text-decoration:none;
-  margin-top:10px;
-}
-
-footer{
-  text-align:center;
-  background:#111;
-  color:white;
-  padding:15px;
-  margin-top:20px;
-}
-
-@media(max-width:600px){
-  header h1{font-size:28px;}
-}
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rashed Rana | Digital Marketer</title>
+    <style>
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; margin: 0; padding: 0; background: #f4f4f4; }
+        header { background: linear-gradient(135deg, #1e3c72, #2a5298); color: white; text-align: center; padding: 60px 20px; }
+        header h1 { margin: 0; font-size: 3em; }
+        header p { font-size: 1.2em; margin-top: 10px; }
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; }
+        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        h2 { color: #1e3c72; border-bottom: 2px solid #1e3c72; padding-bottom: 10px; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .skill-item { background: #eef2f7; padding: 10px; border-radius: 5px; text-align: center; font-weight: bold; color: #333; }
+        .contact-btn { display: inline-block; background: #1e3c72; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; margin-top: 15px; }
+        footer { text-align: center; padding: 20px; color: #666; font-size: 0.9em; }
+    </style>
 </head>
-<body><header>
-  <h1>Rashed Rana</h1>
-  <p>Welcome to my personal website 🚀</p>
-</header><nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav><div class="container">  <div class="card profile" id="about">
-    <h2>About Me</h2>
-    <p>Hello! I am Rashed Rana. I am learning web development and building modern websites using HTML, CSS and JavaScript.</p>
-  </div>  <div class="card" id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>JavaScript Basics</li>
-      <li>WordPress</li>
-    </ul>
-  </div>  <div class="card" id="projects">
-    <h2>Projects</h2>
-    <p>✔ Personal Portfolio Website</p>
-    <p>✔ Practice Landing Pages</p>
-    <p>✔ Small UI Designs</p>
-  </div>  <div class="card" id="contact">
-    <h2>Contact</h2>
-    <p>Email: example@gmail.com</p>
-    <a class="btn" href="#" onclick="alert('Message Sent!')">Send Message</a>
-  </div></div><footer>
-  <p>© 2026 Rashed Rana | All Rights Reserved</p>
-</footer></body>
+<body>
+
+<header>
+    <h1>Rashed Rana</h1>
+    <p>Professional Digital Marketer & Ads Specialist</p>
+</header>
+
+<div class="container">
+    <section class="card">
+        <h2>About Me</h2>
+        <p>Hello! I am <strong>Rashed Rana</strong>, a passionate Digital Marketer. I help businesses grow their online presence and reach their target audience through data-driven marketing strategies.</p>
+    </section>
+
+    <section class="card">
+        <h2>My Expert Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">Facebook Marketing</div>
+            <div class="skill-item">YouTube Marketing</div>
+            <div class="skill-item">YouTube Video SEO</div>
+            <div class="skill-item">Instagram Marketing</div>
+            <div class="skill-item">Facebook Ads Campaign</div>
+            <div class="skill-item">Instagram Ads Campaign</div>
+        </div>
+    </section>
+
+    <section class="card" style="text-align: center;">
+        <h2>Contact Me</h2>
+        <p>Looking to grow your business? Let's talk!</p>
+        <p><strong>Email:</strong> Mr.rashedrana.bd@gmail.com</p>
+        <a href="mailto:Mr.rashedrana.bd@gmail.com" class="contact-btn">Send an Email</a>
+    </section>
+</div>
+
+<footer>
+    &copy; 2026 Rashed Rana. All Rights Reserved.
+</footer>
+
+</body>
 </html>
