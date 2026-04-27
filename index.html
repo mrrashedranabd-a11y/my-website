@@ -1,0 +1,108 @@
+index.html
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rashed Rana - Personal Website</title>
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f5f7fb;
+      color:#222;
+    }
+    header{
+      background:linear-gradient(135deg,#007bff,#00c6ff);
+      color:white;
+      text-align:center;
+      padding:50px 20px;
+    }
+    header h1{margin:0;font-size:40px;}
+    header p{margin-top:10px;font-size:18px;}nav{
+  background:#111;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+nav a{
+  color:white;
+  padding:12px 18px;
+  text-decoration:none;
+  display:block;
+}
+nav a:hover{background:#007bff;}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:white;
+  margin:15px 0;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.profile{
+  text-align:center;
+}
+
+.btn{
+  display:inline-block;
+  padding:10px 15px;
+  background:#007bff;
+  color:white;
+  border-radius:6px;
+  text-decoration:none;
+  margin-top:10px;
+}
+
+footer{
+  text-align:center;
+  background:#111;
+  color:white;
+  padding:15px;
+  margin-top:20px;
+}
+
+@media(max-width:600px){
+  header h1{font-size:28px;}
+}
+
+  </style>
+</head>
+<body><header>
+  <h1>Rashed Rana</h1>
+  <p>Welcome to my personal website 🚀</p>
+</header><nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav><div class="container">  <div class="card profile" id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am Rashed Rana. I am learning web development and building modern websites using HTML, CSS and JavaScript.</p>
+  </div>  <div class="card" id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript Basics</li>
+      <li>WordPress</li>
+    </ul>
+  </div>  <div class="card" id="projects">
+    <h2>Projects</h2>
+    <p>✔ Personal Portfolio Website</p>
+    <p>✔ Practice Landing Pages</p>
+    <p>✔ Small UI Designs</p>
+  </div>  <div class="card" id="contact">
+    <h2>Contact</h2>
+    <p>Email: example@gmail.com</p>
+    <a class="btn" href="#" onclick="alert('Message Sent!')">Send Message</a>
+  </div></div><footer>
+  <p>© 2026 Rashed Rana | All Rights Reserved</p>
+</footer></body>
+</html>
