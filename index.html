@@ -5,266 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MR Rashed fashion | Luxury Men's Wear</title>
     <style>
-        :root {
-            --gold: #C5A059;
-            --black: #0A0A0A;
-            --dark-grey: #1A1A1A;
-            --white: #FFFFFF;
-        }
+        :root { --gold: #C5A059; --black: #0A0A0A; --dark-grey: #1A1A1A; --white: #FFFFFF; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--black); color: var(--white); margin: 0; padding: 0; }
+        
+        header { background: #111; padding: 50px 20px; text-align: center; border-bottom: 3px solid var(--gold); }
+        header h1 { margin: 0; font-size: 32px; letter-spacing: 5px; color: var(--gold); text-transform: uppercase; }
+        header p { margin-top: 10px; opacity: 0.8; letter-spacing: 2px; }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--black);
-            color: var(--white);
-            margin: 0;
-            padding: 0;
-        }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .product-card { background: var(--dark-grey); border: 1px solid #333; padding: 15px; text-align: center; transition: 0.3s; }
+        .product-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        
+        /* Image Style */
+        .product-img-box { width: 100%; height: 350px; overflow: hidden; background: #000; margin-bottom: 15px; border-radius: 5px; }
+        .product-img-box img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Hero Section */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1617130863154-964ff4e445b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 3px solid var(--gold);
-        }
+        .product-card h3 { font-size: 20px; margin: 10px 0; letter-spacing: 1px; }
+        .desc { font-size: 14px; color: #aaa; margin-bottom: 15px; line-height: 1.5; }
+        .price { font-size: 22px; color: var(--gold); font-weight: bold; margin-bottom: 20px; }
 
-        header h1 {
-            font-size: 45px;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 8px;
-            color: var(--gold);
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-        }
+        .btn-order { background: var(--gold); color: black; border: none; padding: 12px; width: 100%; font-weight: bold; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+        .btn-order:hover { background: white; }
 
-        header p {
-            font-size: 18px;
-            letter-spacing: 3px;
-            margin-top: 10px;
-            color: var(--white);
-        }
+        .payment-section { background: #111; padding: 40px; margin-top: 50px; border: 1px solid var(--gold); text-align: center; }
+        .pay-number { background: #1a1a1a; padding: 15px; display: inline-block; border-radius: 8px; margin: 10px; border: 1px dashed var(--gold); }
 
-        .container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        h2.section-title {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 50px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            border-bottom: 1px solid var(--gold);
-            display: table;
-            margin-left: auto;
-            margin-right: auto;
-            padding-bottom: 10px;
-        }
-
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-
-        .product-card {
-            background: var(--dark-grey);
-            border-radius: 0;
-            transition: all 0.4s ease;
-            position: relative;
-            border: 1px solid #333;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .product-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
-        }
-
-        .product-img-box {
-            width: 100%;
-            height: 300px;
-            background: #222;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #555;
-            text-transform: uppercase;
-        }
-
-        .product-card h3 {
-            font-size: 22px;
-            letter-spacing: 1px;
-            margin: 15px 0;
-            color: var(--white);
-        }
-
-        .price {
-            font-size: 24px;
-            color: var(--gold);
-            font-weight: bold;
-            margin-bottom: 25px;
-        }
-
-        /* Buttons */
-        .btn-order {
-            background: var(--gold);
-            color: var(--black);
-            padding: 15px 30px;
-            border: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.3s;
-            margin-bottom: 10px;
-        }
-
-        .btn-order:hover {
-            background: var(--white);
-            color: var(--black);
-        }
-
-        .btn-wa {
-            background: transparent;
-            color: var(--white);
-            border: 1px solid #555;
-            padding: 12px;
-            display: block;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .btn-wa:hover {
-            border-color: #25D366;
-            color: #25D366;
-        }
-
-        /* Payment Section */
-        .payment-info {
-            background: var(--dark-grey);
-            margin-top: 80px;
-            padding: 50px;
-            text-align: center;
-            border: 1px solid var(--gold);
-        }
-
-        .pay-grid {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 30px;
-        }
-
-        .pay-item {
-            background: var(--black);
-            padding: 20px;
-            border-radius: 5px;
-            min-width: 200px;
-        }
-
-        .pay-item span {
-            color: var(--gold);
-            font-size: 18px;
-            display: block;
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        footer {
-            padding: 60px;
-            text-align: center;
-            background: #050505;
-            color: #555;
-            letter-spacing: 2px;
-            font-size: 12px;
-            text-transform: uppercase;
-        }
+        footer { text-align: center; padding: 40px; color: #555; font-size: 12px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>MR Rashed fashion</h1>
-    <p>THE ART OF GENTLEMEN</p>
+    <p>Premium Men's Clothing</p>
 </header>
 
 <div class="container">
-    <h2 class="section-title">New Arrivals</h2>
-    
     <div class="product-grid">
+        
         <div class="product-card">
-            <div class="product-img-box">Premium Panjabi Image</div>
+            <div class="product-img-box">
+                <img src="images (10).jpeg" alt="Panjabi">
+            </div>
             <h3>Royal Cotton Panjabi</h3>
+            <p class="desc">১০০% প্রিমিয়াম সুতি কাপড়ে তৈরি এই পাঞ্জাবি আপনাকে দেবে রাজকীয় আভিজাত্য এবং আরাম।</p>
             <p class="price">৳ ১,৮৫০</p>
-            <button class="btn-order" onclick="buyNow('Royal Cotton Panjabi', '1,850')">Buy Now</button>
-            <a href="https://wa.me/8801346695273" class="btn-wa">WhatsApp Inquiry</a>
+            <button class="btn-order" onclick="buy('Royal Cotton Panjabi', '1,850')">Order Now</button>
         </div>
 
         <div class="product-card">
-            <div class="product-img-box">Exclusive Shirt Image</div>
+            <div class="product-img-box">
+                <img src="images (11).jpeg" alt="Shirt">
+            </div>
             <h3>Luxury Slim Fit Shirt</h3>
+            <p class="desc">স্মার্ট লুকের জন্য এই শার্টটি সেরা পছন্দ। এটি উন্নত মানের ফেব্রিক দিয়ে তৈরি যা দীর্ঘস্থায়ী।</p>
             <p class="price">৳ ১,৪৫০</p>
-            <button class="btn-order" onclick="buyNow('Luxury Slim Fit Shirt', '1,450')">Buy Now</button>
-            <a href="https://wa.me/8801346695273" class="btn-wa">WhatsApp Inquiry</a>
+            <button class="btn-order" onclick="buy('Luxury Slim Fit Shirt', '1,450')">Order Now</button>
         </div>
 
         <div class="product-card">
-            <div class="product-img-box">Pants Image</div>
-            <h3>Chino Gabardine Pant</h3>
-            <p class="price">৳ ১,৯৫০</p>
-            <button class="btn-order" onclick="buyNow('Chino Gabardine Pant', '1,950')">Buy Now</button>
-            <a href="https://wa.me/8801346695273" class="btn-wa">WhatsApp Inquiry</a>
+            <div class="product-img-box">
+                <img src="images (12).jpeg" alt="Pant">
+            </div>
+            <h3>Premium Chino Pant</h3>
+            <p class="desc">স্টাইল এবং কমফোর্ট একসাথে পেতে আমাদের এই প্রিমিয়াম প্যান্টটি অতুলনীয়।</p>
+            <p class="price">৳ ১,১৫০</p>
+            <button class="btn-order" onclick="buy('Premium Chino Pant', '1,950')">Order Now</button>
         </div>
+
     </div>
 
-    <div class="payment-info">
-        <h2 style="margin-top:0; color: var(--gold);">Official Payment Methods</h2>
-        <p>অর্ডার কনফার্ম করতে পেমেন্ট করুন নিচের নাম্বারগুলোতে</p>
-        <div class="pay-grid">
-            <div class="pay-item">
-                bKash / Rocket
-                <span>01614298617</span>
-            </div>
-            <div class="pay-item">
-                Nagad
-                <span>01710392011</span>
-            </div>
-        </div>
+    <div class="payment-section">
+        <h3 style="color:var(--gold)">পেমেন্ট গেটওয়ে</h3>
+        <div class="pay-number">বিকাশ / রকেট: 01614298617</div>
+        <div class="pay-number">নগদ: 01710392011</div>
+        <p style="margin-top:15px; font-size: 14px;">টাকা পাঠিয়ে নিচের নাম্বারে হোয়াটসঅ্যাপ করুন</p>
+        <p style="font-weight:bold; color:var(--gold)">WhatsApp: 01346695273</p>
     </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 MR Rashed fashion | Designed for Excellence</p>
-    <p style="margin-top:10px;">Contact: 01346695273</p>
+    <p>&copy; 2026 MR Rashed fashion | All Rights Reserved</p>
 </footer>
 
 <script>
-    function buyNow(name, price) {
+    function buy(name, price) {
         const waNum = "8801346695273";
-        const message = `*NEW ORDER: MR Rashed fashion*%0A%0A` +
-                        `*Product:* ${name}%0A` +
-                        `*Price:* ৳${price}%0A%0A` +
-                        `আমি এই প্রোডাক্টটি অর্ডার করতে চাই। বিস্তারিত জানান।`;
-        window.open(`https://wa.me/${waNum}?text=${message}`, '_blank');
+        const msg = `*NEW ORDER: MR Rashed fashion*%0A%0A*Product:* ${name}%0A*Price:* ৳${price}%0A%0Aআমি এই পণ্যটি কিনতে চাই। বিস্তারিত জানান।`;
+        window.open(`https://wa.me/${waNum}?text=${msg}`, '_blank');
     }
 </script>
 
 </body>
-                </html>
+</html>
