@@ -1,117 +1,98 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rashed Brand Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR Rashed fashion | Checkout</title>
+    <style>
+        :root { --gold: #d4af37; --black: #0d1117; --white: #ffffff; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--black); color: var(--white); margin: 0; padding: 20px; }
+        
+        .checkout-container { max-width: 450px; margin: auto; background: #161b22; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #30363d; }
+        h2 { text-align: center; margin-bottom: 25px; font-size: 28px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
+        
+        .input-group { margin-bottom: 15px; }
+        input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: white; box-sizing: border-box; font-size: 16px; }
+        input:focus { border-color: var(--gold); outline: none; }
 
-<style>
-body{margin:0;font-family:Arial;background:#0f172a;color:white;}
-header{padding:20px;text-align:center;background:#020617;}
-.products{display:flex;flex-wrap:wrap;justify-content:center;padding:20px;}
-.card{
-  background:#020617;
-  margin:15px;
-  padding:15px;
-  width:250px;
-  border-radius:10px;
-  text-align:center;
-}
-.card img{width:100%;}
-button{
-  margin-top:10px;
-  padding:10px;
-  width:100%;
-  background:#38bdf8;
-  border:none;
-  cursor:pointer;
-}
-.checkout{
-  display:none;
-  padding:20px;
-}
-input,select{
-  width:100%;
-  padding:8px;
-  margin:5px 0;
-}
-</style>
+        .order-info { background: #0d1117; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid var(--gold); text-align: left; }
+        .order-info p { margin: 8px 0; font-size: 14px; color: #8b949e; }
+        .order-info span { color: var(--white); font-weight: bold; display: block; margin-top: 2px; }
+
+        .btn-group { display: flex; gap: 10px; flex-direction: column; }
+        .confirm-btn { background-color: #238636; color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+        .confirm-btn:hover { background-color: #2ea043; }
+        
+        .wa-btn { background-color: #25D366; color: white; text-decoration: none; text-align: center; width: 100%; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 16px; display: block; box-sizing: border-box; transition: 0.3s; }
+        .wa-btn:hover { background-color: #128C7E; }
+
+        .payment-note { font-size: 13px; color: #8b949e; text-align: center; margin-top: 15px; line-height: 1.5; }
+    </style>
 </head>
-
 <body>
 
-<header>
-  <h1>Rashed Brand Store 🛒</h1>
-</header>
+<div class="checkout-container">
+    <h2>MR Rashed fashion</h2>
+    
+    <div class="input-group">
+        <input type="text" id="name" placeholder="আপনার নাম" required>
+    </div>
+    
+    <div class="input-group">
+        <input type="number" id="phone" placeholder="ফোন নাম্বার" required>
+    </div>
+    
+    <div class="input-group">
+        <textarea id="address" placeholder="পূর্ণ ঠিকানা (গ্রাম, থানা, জেলা)" rows="3" required></textarea>
+    </div>
 
-<div class="products">
+    <div class="input-group">
+        <select id="paymentMethod">
+            <option value="bKash">bKash (বিকাশ)</option>
+            <option value="Nagad">Nagad (নগদ)</option>
+            <option value="Rocket">Rocket (রকেট)</option>
+            <option value="Cash on Delivery">Cash on Delivery (ক্যাশ অন ডেলিভারি)</option>
+        </select>
+    </div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/250">
-    <h3>T-Shirt</h3>
-    <p>৳500</p>
-    <button onclick="openCheckout('T-Shirt',500)">Buy Now</button>
-  </div>
+    <div class="order-info">
+        <p>বিকাশ ও রকেট নাম্বার: <span>01614298617</span></p>
+        <p>নগদ নাম্বার: <span>01710392011</span></p>
+    </div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/250">
-    <h3>Shoes</h3>
-    <p>৳1200</p>
-    <button onclick="openCheckout('Shoes',1200)">Buy Now</button>
-  </div>
+    <div class="btn-group">
+        <button class="confirm-btn" onclick="sendOrder()">Confirm Order (অর্ডার করুন)</button>
+        <a href="https://wa.me/8801346695273" class="wa-btn">WhatsApp-এ সরাসরি চ্যাট</a>
+    </div>
 
-</div>
-
-<!-- Checkout -->
-<div class="checkout" id="checkout">
-  <h2>Checkout</h2>
-
-  <input id="name" placeholder="Your Name">
-  <input id="phone" placeholder="Phone Number">
-  <input id="address" placeholder="Address">
-
-  <select id="payment">
-    <option>bKash</option>
-    <option>Nagad</option>
-    <option>Rocket</option>
-    <option>Upay</option>
-  </select>
-
-  <p id="productInfo"></p>
-
-  <button onclick="orderNow()">Confirm Order</button>
+    <p class="payment-note">পেমেন্ট করে "Confirm Order" বাটনে ক্লিক করলে আপনার অর্ডারের সব তথ্য আমাদের হোয়াটসঅ্যাপে চলে আসবে।</p>
 </div>
 
 <script>
-let productName="";
-let productPrice=0;
+    function sendOrder() {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const address = document.getElementById('address').value;
+        const payment = document.getElementById('paymentMethod').value;
+        const whatsappNumber = "8801346695273"; // আপনার দেওয়া নতুন হোয়াটসঅ্যাপ নাম্বার
 
-function openCheckout(name,price){
-  productName=name;
-  productPrice=price;
-  document.getElementById("checkout").style.display="block";
-  document.getElementById("productInfo").innerHTML=
-    "Product: "+name+" | Price: ৳"+price+
-    "<br><br>Send Money to: 01614298617";
-}
+        if(name === "" || phone === "" || address === "") {
+            alert("অনুগ্রহ করে আপনার নাম, ফোন নাম্বার এবং ঠিকানা দিন।");
+            return;
+        }
 
-function orderNow(){
-  let name=document.getElementById("name").value;
-  let phone=document.getElementById("phone").value;
-  let address=document.getElementById("address").value;
-  let payment=document.getElementById("payment").value;
+        // হোয়াটসঅ্যাপে যে মেসেজটি আপনার কাছে আসবে সেটির ফরম্যাট
+        const message = `*New Order: MR Rashed fashion*%0A%0A` +
+                        `*Customer Name:* ${name}%0A` +
+                        `*Phone:* ${phone}%0A` +
+                        `*Address:* ${address}%0A` +
+                        `*Payment Method:* ${payment}%0A%0A` +
+                        `আমি এই অর্ডারটি কনফার্ম করতে চাই।`;
 
-  let msg=
-  "Order Details:%0A"+
-  "Name: "+name+"%0A"+
-  "Phone: "+phone+"%0A"+
-  "Address: "+address+"%0A"+
-  "Product: "+productName+"%0A"+
-  "Price: ৳"+productPrice+"%0A"+
-  "Payment: "+payment;
-
-  window.open("https://wa.me/8801614298617?text="+msg);
-}
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+        window.open(whatsappURL, '_blank');
+    }
 </script>
 
 </body>
