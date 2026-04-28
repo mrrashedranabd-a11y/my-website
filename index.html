@@ -3,96 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MR Rashed fashion | Checkout</title>
+    <title>MR Rashed fashion | Luxury Men's Wear</title>
     <style>
-        :root { --gold: #d4af37; --black: #0d1117; --white: #ffffff; }
-        body { font-family: 'Segoe UI', sans-serif; background-color: var(--black); color: var(--white); margin: 0; padding: 20px; }
-        
-        .checkout-container { max-width: 450px; margin: auto; background: #161b22; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #30363d; }
-        h2 { text-align: center; margin-bottom: 25px; font-size: 28px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; }
-        
-        .input-group { margin-bottom: 15px; }
-        input, select, textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #30363d; background: #0d1117; color: white; box-sizing: border-box; font-size: 16px; }
-        input:focus { border-color: var(--gold); outline: none; }
+        :root {
+            --gold: #C5A059;
+            --black: #0A0A0A;
+            --dark-grey: #1A1A1A;
+            --white: #FFFFFF;
+        }
 
-        .order-info { background: #0d1117; padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid var(--gold); text-align: left; }
-        .order-info p { margin: 8px 0; font-size: 14px; color: #8b949e; }
-        .order-info span { color: var(--white); font-weight: bold; display: block; margin-top: 2px; }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            margin: 0;
+            padding: 0;
+        }
 
-        .btn-group { display: flex; gap: 10px; flex-direction: column; }
-        .confirm-btn { background-color: #238636; color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .confirm-btn:hover { background-color: #2ea043; }
-        
-        .wa-btn { background-color: #25D366; color: white; text-decoration: none; text-align: center; width: 100%; padding: 12px; border-radius: 8px; font-weight: bold; font-size: 16px; display: block; box-sizing: border-box; transition: 0.3s; }
-        .wa-btn:hover { background-color: #128C7E; }
+        /* Hero Section */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1617130863154-964ff4e445b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
 
-        .payment-note { font-size: 13px; color: #8b949e; text-align: center; margin-top: 15px; line-height: 1.5; }
+        header h1 {
+            font-size: 45px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            color: var(--gold);
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 18px;
+            letter-spacing: 3px;
+            margin-top: 10px;
+            color: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            border-bottom: 1px solid var(--gold);
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 10px;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: var(--dark-grey);
+            border-radius: 0;
+            transition: all 0.4s ease;
+            position: relative;
+            border: 1px solid #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
+        }
+
+        .product-img-box {
+            width: 100%;
+            height: 300px;
+            background: #222;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .product-card h3 {
+            font-size: 22px;
+            letter-spacing: 1px;
+            margin: 15px 0;
+            color: var(--white);
+        }
+
+        .price {
+            font-size: 24px;
+            color: var(--gold);
+            font-weight: bold;
+            margin-bottom: 25px;
+        }
+
+        /* Buttons */
+        .btn-order {
+            background: var(--gold);
+            color: var(--black);
+            padding: 15px 30px;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .btn-order:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .btn-wa {
+            background: transparent;
+            color: var(--white);
+            border: 1px solid #555;
+            padding: 12px;
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-wa:hover {
+            border-color: #25D366;
+            color: #25D366;
+        }
+
+        /* Payment Section */
+        .payment-info {
+            background: var(--dark-grey);
+            margin-top: 80px;
+            padding: 50px;
+            text-align: center;
+            border: 1px solid var(--gold);
+        }
+
+        .pay-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .pay-item {
+            background: var(--black);
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 200px;
+        }
+
+        .pay-item span {
+            color: var(--gold);
+            font-size: 18px;
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 60px;
+            text-align: center;
+            background: #050505;
+            color: #555;
+            letter-spacing: 2px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
 
-<div class="checkout-container">
-    <h2>MR Rashed fashion</h2>
+<header>
+    <h1>MR Rashed fashion</h1>
+    <p>THE ART OF GENTLEMEN</p>
+</header>
+
+<div class="container">
+    <h2 class="section-title">New Arrivals</h2>
     
-    <div class="input-group">
-        <input type="text" id="name" placeholder="আপনার নাম" required>
-    </div>
-    
-    <div class="input-group">
-        <input type="number" id="phone" placeholder="ফোন নাম্বার" required>
-    </div>
-    
-    <div class="input-group">
-        <textarea id="address" placeholder="পূর্ণ ঠিকানা (গ্রাম, থানা, জেলা)" rows="3" required></textarea>
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-img-box">Premium Panjabi Image</div>
+            <h3>Royal Cotton Panjabi</h3>
+            <p class="price">৳ ১,৮৫০</p>
+            <button class="btn-order" onclick="buyNow('Royal Cotton Panjabi', '1,850')">Buy Now</button>
+            <a href="https://wa.me/8801346695273" class="btn-wa">WhatsApp Inquiry</a>
+        </div>
+
+        <div class="product-card">
+            <div class="product-img-box">Exclusive Shirt Image</div>
+            <h3>Luxury Slim Fit Shirt</h3>
+            <p class="price">৳ ১,৪৫০</p>
+            <button class="btn-order" onclick="buyNow('Luxury Slim Fit Shirt', '1,450')">Buy Now</button>
+            <a href="https://wa.me/8801346695273" class="btn-wa">WhatsApp Inquiry</a>
+        </div>
+
+        <div class="product-card">
+            <div class="product-img-box">Pants Image</div>
+            <h3>Chino Gabardine Pant</h3>
+            <p class="price">৳ ১,৯৫০</p>
+            <button class="btn-order" onclick="buyNow('Chino Gabardine Pant', '1,950')">Buy Now</button>
+            <a href="https://wa.me/8801346695273" class="btn-wa">WhatsApp Inquiry</a>
+        </div>
     </div>
 
-    <div class="input-group">
-        <select id="paymentMethod">
-            <option value="bKash">bKash (বিকাশ)</option>
-            <option value="Nagad">Nagad (নগদ)</option>
-            <option value="Rocket">Rocket (রকেট)</option>
-            <option value="Cash on Delivery">Cash on Delivery (ক্যাশ অন ডেলিভারি)</option>
-        </select>
+    <div class="payment-info">
+        <h2 style="margin-top:0; color: var(--gold);">Official Payment Methods</h2>
+        <p>অর্ডার কনফার্ম করতে পেমেন্ট করুন নিচের নাম্বারগুলোতে</p>
+        <div class="pay-grid">
+            <div class="pay-item">
+                bKash / Rocket
+                <span>01614298617</span>
+            </div>
+            <div class="pay-item">
+                Nagad
+                <span>01710392011</span>
+            </div>
+        </div>
     </div>
-
-    <div class="order-info">
-        <p>বিকাশ ও রকেট নাম্বার: <span>01614298617</span></p>
-        <p>নগদ নাম্বার: <span>01710392011</span></p>
-    </div>
-
-    <div class="btn-group">
-        <button class="confirm-btn" onclick="sendOrder()">Confirm Order (অর্ডার করুন)</button>
-        <a href="https://wa.me/8801346695273" class="wa-btn">WhatsApp-এ সরাসরি চ্যাট</a>
-    </div>
-
-    <p class="payment-note">পেমেন্ট করে "Confirm Order" বাটনে ক্লিক করলে আপনার অর্ডারের সব তথ্য আমাদের হোয়াটসঅ্যাপে চলে আসবে।</p>
 </div>
 
+<footer>
+    <p>&copy; 2026 MR Rashed fashion | Designed for Excellence</p>
+    <p style="margin-top:10px;">Contact: 01346695273</p>
+</footer>
+
 <script>
-    function sendOrder() {
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const address = document.getElementById('address').value;
-        const payment = document.getElementById('paymentMethod').value;
-        const whatsappNumber = "8801346695273"; // আপনার দেওয়া নতুন হোয়াটসঅ্যাপ নাম্বার
-
-        if(name === "" || phone === "" || address === "") {
-            alert("অনুগ্রহ করে আপনার নাম, ফোন নাম্বার এবং ঠিকানা দিন।");
-            return;
-        }
-
-        // হোয়াটসঅ্যাপে যে মেসেজটি আপনার কাছে আসবে সেটির ফরম্যাট
-        const message = `*New Order: MR Rashed fashion*%0A%0A` +
-                        `*Customer Name:* ${name}%0A` +
-                        `*Phone:* ${phone}%0A` +
-                        `*Address:* ${address}%0A` +
-                        `*Payment Method:* ${payment}%0A%0A` +
-                        `আমি এই অর্ডারটি কনফার্ম করতে চাই।`;
-
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
-        window.open(whatsappURL, '_blank');
+    function buyNow(name, price) {
+        const waNum = "8801346695273";
+        const message = `*NEW ORDER: MR Rashed fashion*%0A%0A` +
+                        `*Product:* ${name}%0A` +
+                        `*Price:* ৳${price}%0A%0A` +
+                        `আমি এই প্রোডাক্টটি অর্ডার করতে চাই। বিস্তারিত জানান।`;
+        window.open(`https://wa.me/${waNum}?text=${message}`, '_blank');
     }
 </script>
 
 </body>
-</html>
+                </html>
