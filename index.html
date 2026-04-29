@@ -2,29 +2,157 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <title>RASHED FASHION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RASHED FASHION | Luxury Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
-        body { margin: 0; background-color: #000; color: #fff; font-family: Arial, sans-serif; }
-        .header { text-align: center; padding: 20px; border-bottom: 2px solid #c5a059; }
-        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 10px; }
-        .product-card { background: #1a1a1a; padding: 10px; text-align: center; border-radius: 5px; }
-        .product-img { width: 100%; }
-        .buy-btn { background: #c5a059; padding: 10px; width: 100%; border: none; font-weight: bold; }
+        :root { --gold: #c5a059; --dark: #0a0a0a; --red: #e74c3c; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--dark); color: #fff; }
+
+        /* --- হোমপেজ স্টাইল --- */
+        .header { text-align: center; padding: 30px 20px; border-bottom: 2px solid var(--gold); }
+        .brand-name { font-family: 'Cinzel', serif; color: var(--gold); font-size: 28px; letter-spacing: 4px; margin: 0; }
+        .promo-bar { background: var(--red); color: white; text-align: center; padding: 8px; font-size: 12px; font-weight: bold; }
+
+        .container { padding: 15px; max-width: 1200px; margin: auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .product-card { background: #1a1a1a; border-radius: 12px; overflow: hidden; text-align: center; border: 1px solid #333; padding-bottom: 15px; }
+        .product-img { width: 100%; aspect-ratio: 1/1.2; object-fit: cover; }
+        
+        .p-name { font-size: 13px; color: #ccc; padding: 10px 5px; height: 35px; }
+        
+        /* ডিসকাউন্ট প্রাইস স্টাইল */
+        .price-container { margin-bottom: 12px; }
+        .old-price { color: var(--red); text-decoration: line-through; font-size: 14px; margin-right: 8px; font-weight: bold; }
+        .new-price { color: var(--gold); font-size: 18px; font-weight: 800; }
+
+        .buy-btn { background: var(--gold); color: #000; border: none; padding: 12px; width: 90%; font-weight: bold; border-radius: 6px; cursor: pointer; text-transform: uppercase; font-size: 11px; }
+
+        /* --- অর্ডার পেজ স্টাইল --- */
+        #order-page { display: none; background: #f4f4f4; color: #333; min-height: 100vh; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .mega-img { width: 100%; max-height: 65vh; object-fit: cover; border-bottom: 4px solid var(--gold); }
+        .checkout-box { max-width: 500px; margin: auto; padding: 20px; text-align: center; }
+        
+        .info-card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-top: -40px; position: relative; z-index: 5; }
+        .info-card h2 { font-size: 20px; margin-bottom: 10px; }
+        
+        .order-old-price { color: var(--red); text-decoration: line-through; font-size: 18px; display: block; margin-bottom: 5px; font-weight: bold; }
+        .order-new-price { color: var(--gold); font-size: 32px; font-weight: 800; display: block; }
+
+        .pay-info { background: #fffcf5; border: 1px dashed var(--gold); padding: 15px; border-radius: 12px; margin: 20px 0; }
+        .acc-num { display: block; font-size: 18px; font-weight: bold; color: #d63031; margin: 5px 0; }
+        
+        .whatsapp-btn { background: #25D366; color: white; padding: 18px; border-radius: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold; font-size: 18px; margin-top: 20px; }
+        .back-link { display: block; margin-top: 20px; color: #777; text-decoration: underline; font-size: 14px; cursor: pointer; }
+
+        @media (min-width: 768px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
     </style>
 </head>
 <body>
-    <div class="header"><h1>RASHED FASHION</h1></div>
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="images (13).jpeg" class="product-img">
-            <p>Luxury Navy Slim Fit Shirt</p>
-            <button class="buy-btn" onclick="alert('অর্ডারের জন্য আমাদের সাথে যোগাযোগ করুন!')">ORDER NOW</button>
+
+    <div id="home-page">
+        <div class="header">
+            <h1 class="brand-name">RASHED FASHION</h1>
         </div>
-        <div class="product-card">
-            <img src="images (12).jpeg" class="product-img">
-            <p>Exclusive Black Panjabi</p>
-            <button class="buy-btn" onclick="alert('অর্ডারের জন্য আমাদের সাথে যোগাযোগ করুন!')">ORDER NOW</button>
+        <div class="promo-bar">🔥 ধামাকা অফার: সব প্রোডাক্টে ৫০% পর্যন্ত বিশাল ছাড়! 🔥</div>
+
+        <div class="container">
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <img src="images (13).jpeg" class="product-img">
+                    <div class="p-name">Luxury Navy Slim Fit Shirt</div>
+                    <div class="price-container">
+                        <span class="old-price">৳ ২৯০০</span>
+                        <span class="new-price">৳ ১৪৫০</span>
+                    </div>
+                    <button class="buy-btn" onclick="openOrder('Navy Slim Fit Shirt', '১৪৫০', '২৯০০', 'images (13).jpeg')">ORDER NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images (12).jpeg" class="product-img">
+                    <div class="p-name">Exclusive Black Panjabi</div>
+                    <div class="price-container">
+                        <span class="old-price">৳ ৩৯৬০</span>
+                        <span class="new-price">৳ ১৯৮০</span>
+                    </div>
+                    <button class="buy-btn" onclick="openOrder('Black Panjabi', '১৯৮০', '৩৯৬০', 'images (12).jpeg')">ORDER NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images (11).jpeg" class="product-img">
+                    <div class="p-name">Elegant Green Panjabi</div>
+                    <div class="price-container">
+                        <span class="old-price">৳ ৩৭০০</span>
+                        <span class="new-price">৳ ১৮৫০</span>
+                    </div>
+                    <button class="buy-btn" onclick="openOrder('Green Panjabi', '১৮৫০', '৩৭০০', 'images (11).jpeg')">ORDER NOW</button>
+                </div>
+
+                <div class="product-card">
+                    <img src="images (10).jpeg" class="product-img">
+                    <div class="p-name">Golden Cotton Panjabi</div>
+                    <div class="price-container">
+                        <span class="old-price">৳ ৩৯৯০</span>
+                        <span class="new-price">৳ ১৯৯৫</span>
+                    </div>
+                    <button class="buy-btn" onclick="openOrder('Golden Panjabi', '১৯৯৫', '৩৯৯০', 'images (10).jpeg')">ORDER NOW</button>
+                </div>
+
+            </div>
         </div>
     </div>
+
+    <div id="order-page">
+        <img id="mega-display" src="" class="mega-img">
+        
+        <div class="checkout-box">
+            <div class="info-card">
+                <h2 id="order-name">Product Name</h2>
+                <span class="order-old-price" id="order-old-price">৳ 0</span>
+                <span class="order-new-price" id="order-new-price">৳ 0</span>
+                <p style="font-size:12px; color:#888; margin-top:10px;">ডেলিভারি চার্জ: সারাদেশে ৬০ টাকা মাত্র</p>
+            </div>
+
+            <div class="pay-info">
+                <p style="margin:0; font-size:14px; color:#856404;">নিচের নাম্বারে পেমেন্ট করে কনফার্ম করুন:</p>
+                <span class="acc-num">বিকাশ: 01614298617</span>
+                <span class="acc-num">নগদ: 01710392011</span>
+            </div>
+
+            <a id="wa-link" href="#" class="whatsapp-btn">
+                <i class="fab fa-whatsapp" style="margin-right:10px;"></i> কনফার্ম করতে এখানে ক্লিক করুন
+            </a>
+            
+            <span class="back-link" onclick="goHome()">← শপে ফিরে যান</span>
+        </div>
+    </div>
+
+    <script>
+        function openOrder(name, newPrice, oldPrice, img) {
+            document.getElementById('home-page').style.display = 'none';
+            document.getElementById('order-page').style.display = 'block';
+            
+            document.getElementById('mega-display').src = img;
+            document.getElementById('order-name').innerText = name;
+            document.getElementById('order-old-price').innerText = "৳ " + oldPrice;
+            document.getElementById('order-new-price').innerText = "৳ " + newPrice;
+
+            const msg = `আসসালামু আলাইকুম, আমি এই প্রোডাক্টটি অর্ডার করতে চাই: \n📦 পন্য: ${name} \n💰 বর্তমান দাম: ৳${newPrice} (আগের দাম: ৳${oldPrice}) \n\nআমার ঠিকানা ও পেমেন্ট ডিটেইলস নিচে দিচ্ছি।`;
+            document.getElementById('wa-link').href = "https://wa.me/8801346695273?text=" + encodeURIComponent(msg);
+            
+            window.scrollTo(0, 0);
+        }
+
+        function goHome() {
+            document.getElementById('order-page').style.display = 'none';
+            document.getElementById('home-page').style.display = 'block';
+        }
+    </script>
+
 </body>
-</html>
+                            </html>
