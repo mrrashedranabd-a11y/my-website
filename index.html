@@ -12,44 +12,53 @@
         body { font-family: 'Poppins', sans-serif; margin: 0; padding: 0; background-color: var(--dark); color: #fff; }
 
         /* --- হেডার --- */
-        .header { text-align: center; padding: 25px 20px; border-bottom: 2px solid var(--gold); background: #000; }
+        .header { text-align: center; padding: 20px; border-bottom: 2px solid var(--gold); background: #000; }
         .brand-name { font-family: 'Cinzel', serif; color: var(--gold); font-size: 28px; letter-spacing: 4px; margin: 0; }
         
-        /* --- NOBIN স্টাইল অটো স্লাইডার --- */
-        .slider-container { width: 100%; height: 250px; overflow: hidden; position: relative; border-bottom: 1px solid #333; }
-        .slides { display: flex; width: 400%; height: 100%; transition: 1s ease-in-out; }
-        .slide { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; text-align: center; background-size: cover; background-position: center; position: relative; }
-        
-        .slide h2 { font-family: 'Cinzel'; color: var(--gold); font-size: 26px; margin: 0; text-shadow: 2px 2px 10px #000; }
-        .slide p { font-size: 14px; margin-top: 8px; background: rgba(0,0,0,0.6); padding: 5px 15px; border-radius: 5px; }
+        /* --- NOBIN স্টাইল প্রফেশনাল টেক্সট স্লাইডার --- */
+        .slider-container { width: 100%; height: 220px; overflow: hidden; position: relative; background: #000; }
+        .slides { display: flex; width: 300%; height: 100%; transition: 0.8s ease-in-out; }
+        .slide { 
+            width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; 
+            padding: 20px; box-sizing: border-box; position: relative;
+        }
 
-        .promo-bar { background: var(--red); color: white; text-align: center; padding: 10px; font-size: 12px; font-weight: bold; }
+        /* বাম পাশের বড় স্টাইলিশ টেক্সট */
+        .slide-left { flex: 1; text-align: left; padding-left: 20px; }
+        .slide-left h3 { font-family: 'Cinzel', serif; font-size: 24px; color: #fff; margin: 0; line-height: 1; }
+        .slide-left span { font-size: 18px; color: var(--gold); font-weight: 800; letter-spacing: 2px; }
+
+        /* ডান পাশের অফার টেক্সট */
+        .slide-right { flex: 1.5; text-align: right; border-left: 1px solid #333; padding-right: 20px; }
+        .slide-right p { font-size: 16px; font-weight: 400; color: #ccc; margin: 0; }
+        .slide-right h4 { font-size: 20px; color: #fff; margin: 5px 0; font-weight: 700; }
+
+        /* স্লাইড ৩ এর জন্য যেখানে শুধু ছবি থাকবে */
+        .slide-img-only { width: 100%; height: 100%; object-fit: cover; }
+
+        /* চলন্ত অফার বার */
+        .promo-bar { background: #111; color: #fff; text-align: center; padding: 8px; font-size: 13px; border-top: 1px solid #222; border-bottom: 1px solid #222; }
+
+        /* স্পেশাল ডিসকাউন্ট বাটন (নবীন স্টাইল) */
+        .special-btn { background: #1a1a1a; color: var(--gold); text-align: center; padding: 10px; font-weight: bold; border-bottom: 3px solid var(--gold); cursor: pointer; }
 
         /* --- প্রোডাক্ট গ্রিড --- */
         .container { padding: 15px; max-width: 1200px; margin: auto; }
         .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
-        .product-card { background: #1a1a1a; border-radius: 12px; overflow: hidden; text-align: center; border: 1px solid #333; padding-bottom: 15px; transition: 0.3s; }
-        .product-img { width: 100%; aspect-ratio: 1/1.2; object-fit: cover; cursor: pointer; }
-        
+        .product-card { background: #1a1a1a; border-radius: 10px; overflow: hidden; text-align: center; border: 1px solid #333; padding-bottom: 15px; }
+        .product-img { width: 100%; aspect-ratio: 1/1.2; object-fit: cover; cursor: pointer; transition: 0.4s; }
         .p-name { font-size: 13px; color: #ccc; padding: 10px 5px; height: 35px; }
-        .price-container { margin-bottom: 12px; }
-        .old-price { color: var(--red); text-decoration: line-through; font-size: 14px; margin-right: 8px; font-weight: bold; }
+        .old-price { color: var(--red); text-decoration: line-through; font-size: 14px; margin-right: 8px; }
         .new-price { color: var(--gold); font-size: 18px; font-weight: 800; }
-
-        .buy-btn { background: var(--gold); color: #000; border: none; padding: 12px; width: 90%; font-weight: bold; border-radius: 6px; cursor: pointer; text-transform: uppercase; font-size: 11px; }
+        .buy-btn { background: var(--gold); color: #000; border: none; padding: 12px; width: 90%; font-weight: bold; border-radius: 6px; cursor: pointer; font-size: 11px; }
 
         /* --- অর্ডার পেজ --- */
-        #order-page { display: none; background: #f4f4f4; color: #333; min-height: 100vh; animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        #order-page { display: none; background: #f4f4f4; color: #333; min-height: 100vh; }
         .mega-img { width: 100%; max-height: 65vh; object-fit: cover; border-bottom: 4px solid var(--gold); }
         .checkout-box { max-width: 500px; margin: auto; padding: 20px; text-align: center; }
-        .info-card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-top: -40px; position: relative; z-index: 5; }
-        .order-old-price { color: var(--red); text-decoration: line-through; font-size: 18px; font-weight: bold; }
-        .order-new-price { color: var(--gold); font-size: 32px; font-weight: 800; display: block; }
-        .pay-info { background: #fffcf5; border: 1px dashed var(--gold); padding: 15px; border-radius: 12px; margin: 20px 0; }
-        .acc-num { display: block; font-size: 18px; font-weight: bold; color: #d63031; margin: 5px 0; }
-        .whatsapp-btn { background: #25D366; color: white; padding: 18px; border-radius: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold; font-size: 18px; }
-        .back-link { display: block; margin-top: 20px; color: #777; text-decoration: underline; cursor: pointer; }
+        .info-card { background: white; border-radius: 15px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-top: -40px; position: relative; }
+        .order-new-price { color: var(--gold); font-size: 32px; font-weight: 800; }
+        .whatsapp-btn { background: #25D366; color: white; padding: 18px; border-radius: 50px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: bold; font-size: 18px; margin-top: 20px; }
 
         @media (min-width: 768px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
     </style>
@@ -59,29 +68,47 @@
     <div id="home-page">
         <div class="header"><h1 class="brand-name">RASHED FASHION</h1></div>
 
-        <!-- অটো স্লাইডার: এখানে ছবি ও টেক্সট একসাথে পাল্টাবে -->
+        <!-- NOBIN স্টাইল প্রফেশনাল স্লাইডার -->
         <div class="slider-container">
             <div class="slides" id="slider">
-                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images (13).jpeg');">
-                    <h2>OCTOBER SPECIAL</h2>
-                    <p>প্রতিদিন নতুন পণ্য নিয়ে সবার চেয়ে কম দামে!</p>
+                <!-- স্লাইড ১: টেক্সট ডিজাইন ১ -->
+                <div class="slide">
+                    <div class="slide-left">
+                        <h3>October</h3>
+                        <span>SPECIAL OFFER</span>
+                    </div>
+                    <div class="slide-right">
+                        <p>প্রতিদিন নতুন পণ্য নিয়ে</p>
+                        <h4>সবার চেয়ে কম দামে...</h4>
+                    </div>
                 </div>
-                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images (12).jpeg');">
-                    <h2>মেগা ডিসকাউন্ট</h2>
-                    <p>৬০% মূল্য ছাড় চলছে আমাদের সব কালেকশনে!</p>
+                
+                <!-- স্লাইড ২: টেক্সট ডিজাইন ২ -->
+                <div class="slide">
+                    <div class="slide-left">
+                        <h3>October</h3>
+                        <span>SPECIAL OFFER</span>
+                    </div>
+                    <div class="slide-right">
+                        <p>বেশি দাম লিখে</p>
+                        <h4>DISCOUNT দেখাই না...</h4>
+                    </div>
                 </div>
-                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images (11).jpeg');">
-                    <h2>PREMIUM QUALITY</h2>
-                    <p>সেরা পাঞ্জাবি এখন আপনার হাতের নাগালে।</p>
-                </div>
-                <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('images (10).jpeg');">
-                    <h2>NEW ARRIVAL</h2>
-                    <p>এক্সক্লুসিভ কটন কালেকশন ২০২৬</p>
+
+                <!-- স্লাইড ৩: প্রোডাক্ট ইমেজ স্লাইড -->
+                <div class="slide" style="padding:0;">
+                    <img src="images (13).jpeg" class="slide-img-only">
                 </div>
             </div>
         </div>
 
-        <div class="promo-bar"><marquee>🔥 ধামাকা অফার: সব প্রোডাক্টে ৫০% পর্যন্ত বিশাল ছাড়! সারাদেশে ক্যাশ অন ডেলিভারি সুবিধা আছে 🔥</marquee></div>
+        <div class="promo-bar">
+            <marquee>*** ৬০% মূল্য ছাড় চলছে *** ৬০% মূল্য ছাড় চলছে ***</marquee>
+        </div>
+
+        <div class="special-btn">
+            <i class="fas fa-gift"></i> SPECIAL DISCOUNT
+        </div>
 
         <div class="container">
             <div class="product-grid">
@@ -131,34 +158,27 @@
         <div class="checkout-box">
             <div class="info-card">
                 <h2 id="order-name">Product Name</h2>
-                <span class="order-old-price" id="order-old-price">৳ 0</span>
                 <span class="order-new-price" id="order-new-price">৳ 0</span>
-                <p style="font-size:12px; color:#888; margin-top:10px;">ডেলিভারি চার্জ: সারাদেশে ৬০ টাকা মাত্র</p>
-            </div>
-            <div class="pay-info">
-                <p style="margin:0; font-size:14px; color:#856404;">নিচের নাম্বারে পেমেন্ট করে কনফার্ম করুন:</p>
-                <span class="acc-num">বিকাশ: 01614298617</span>
-                <span class="acc-num">নগদ: 01710392011</span>
+                <p style="font-size:12px; color:#888;">সারাদেশে ক্যাশ অন ডেলিভারি সুবিধা আছে।</p>
             </div>
             <a id="wa-link" href="#" class="whatsapp-btn">
                 <i class="fab fa-whatsapp" style="margin-right:10px;"></i> কনফার্ম করতে ক্লিক করুন
             </a>
-            <span class="back-link" onclick="goHome()">← শপে ফিরে যান</span>
+            <span onclick="goHome()" class="back-link">← শপে ফিরে যান</span>
         </div>
     </div>
 
     <script>
-        // স্লাইডার লজিক (৩ সেকেন্ড পরপর পাল্টাবে)
+        // স্লাইডার লজিক
         let idx = 0;
         setInterval(() => {
-            idx = (idx + 1) % 4;
+            idx = (idx + 1) % 3;
             document.getElementById('slider').style.transform = `translateX(-${idx * 100}%)`;
-        }, 3000);
+        }, 3500);
 
-        // জাভাস্ক্রিপ্ট ম্যাজিক (আপনার শেখা ইফেক্ট)
+        // জাভাস্ক্রিপ্ট হোভার ইফেক্ট
         function highlight(x) {
             x.style.transform = "scale(1.05)";
-            x.style.transition = "0.4s";
             x.style.filter = "brightness(1.1)";
         }
         function normal(x) {
@@ -166,16 +186,13 @@
             x.style.filter = "brightness(1)";
         }
 
-        // অর্ডার পেজ লজিক
         function openOrder(name, newPrice, oldPrice, img) {
             document.getElementById('home-page').style.display = 'none';
             document.getElementById('order-page').style.display = 'block';
             document.getElementById('mega-display').src = img;
             document.getElementById('order-name').innerText = name;
-            document.getElementById('order-old-price').innerText = "৳ " + oldPrice;
             document.getElementById('order-new-price').innerText = "৳ " + newPrice;
-
-            const msg = `আসসালামু আলাইকুম, আমি এই প্রোডাক্টটি অর্ডার করতে চাই: \n📦 পন্য: ${name} \n💰 দাম: ৳${newPrice}`;
+            const msg = `আসসালামু আলাইকুম, আমি এই প্রোডাক্টটি অর্ডার করতে চাই: \n📌 পন্য: ${name} \n💰 দাম: ৳${newPrice}`;
             document.getElementById('wa-link').href = "https://wa.me/8801346695273?text=" + encodeURIComponent(msg);
             window.scrollTo(0, 0);
         }
@@ -186,4 +203,4 @@
         }
     </script>
 </body>
-</html>
+    </html>
